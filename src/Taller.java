@@ -6,9 +6,10 @@ import java.util.List;
 public class Taller
 {
 
-    List <String> nombres = new ArrayList<>();
-    List <String> tareas = new ArrayList<>();
+    List <String> nombres = new ArrayList<>(); //Lista que almacena los nombres
+    List <String> tareas = new ArrayList<>();  //Lista que almacena las tareas
     
+    //Constructor de la clase Taller. Inicializa la lista de nombres con algunos nombres predeterminados.
     public Taller()
     {
         nombres.add("Kevin");
@@ -18,6 +19,9 @@ public class Taller
         nombres.add("Juana");
     }
 
+    /**
+     * Imprime todos los nombres en la lista de nombres.
+     */
     public void imprimirNombres() 
     {
         for (String elem : nombres) 
@@ -26,6 +30,10 @@ public class Taller
         }
     }
 
+    /**
+     * Busca un nombre en la lista de nombres.
+     * @param nombreBuscar
+     */
     public void buscarNombre(String nombreBuscar) 
     {
         for (String elem : nombres) 
@@ -42,6 +50,10 @@ public class Taller
         }
     }
 
+    /**
+     * Agrega un nombre en la lista de nombres si no esá presente.
+     * @param nombreAgregar
+     */
     public void agregarNombre (String nombreAgregar)
     {
         boolean existe = false;
@@ -61,7 +73,11 @@ public class Taller
         imprimirNombres();
     }
 
-
+    /**
+     * Elimina un nombre en la lista de nombres.
+     * 
+     * @param nombreEliminar
+     */
     public void eliminarNombre (String nombreEliminar)
     {
     
@@ -79,6 +95,9 @@ public class Taller
         imprimirNombres();
     }
 
+    /**
+     * Imprime todas las tareas en la lista de tareas.
+     */
     public void imprimirTareas() 
     {
         for (String elem : tareas) 
@@ -87,6 +106,11 @@ public class Taller
         }
     }
 
+    /**
+     * Agrega una tarea a la lista de tareas si no está ya presente.
+     * 
+     * @param tareaAgregar
+     */
     public void agregarTarea (String tareaAgregar)
     {
         boolean existe = false;
@@ -106,6 +130,11 @@ public class Taller
         imprimirTareas();
     }
 
+    /**
+     * Elimina una tarea de la lista de tareas.
+     * 
+     * @param tareaEliminar
+     */
     public void eliminarTarea (String tareaEliminar)
     {
         
