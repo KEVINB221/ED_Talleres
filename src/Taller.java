@@ -166,3 +166,4 @@ public class Taller
     }
 
 }
+// Esta actividad fue fundamental para retomar algunos conceptos vistos en semestres anteriores.
