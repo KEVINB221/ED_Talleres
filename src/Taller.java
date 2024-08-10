@@ -24,6 +24,7 @@ public class Taller
      */
     public void imprimirNombres() 
     {
+        //Bucle que recorre e imprime la lista de nombres
         for (String elem : nombres) 
         {
             System.out.println(elem);
@@ -36,12 +37,14 @@ public class Taller
      */
     public void buscarNombre(String nombreBuscar) 
     {
+        //Bucle que recorre la lista de nombres
         for (String elem : nombres) 
         {
+            //Compara el nombre de la lista con el ingresado por parámetro
             if (elem.equalsIgnoreCase(nombreBuscar))
             {
                 System.out.println("El nombre fue encontrado");
-                break;
+                break; //Para si se encontró el nombre en la lista
             }
             else
             {
@@ -56,10 +59,12 @@ public class Taller
      */
     public void agregarNombre (String nombreAgregar)
     {
-        boolean existe = false;
+        boolean existe = false; //condicional incilizado en falso
         
+        //Bucle que recorre la lista nombres
         for (String elem : nombres)
         {
+            //Compara el nombre en la lista con el ingresado por parámetro para actualizar el condicional
             if (elem.equalsIgnoreCase(nombreAgregar))
             {
                 existe = true;
@@ -68,6 +73,7 @@ public class Taller
         }
         if (!existe) 
         {
+            //Agrega el nombre a la lista
             nombres.add(nombreAgregar);
         }
         imprimirNombres();
@@ -80,9 +86,10 @@ public class Taller
      */
     public void eliminarNombre (String nombreEliminar)
     {
-    
+        //Verifica si el nombre a eliminar se encuentra en la lista de nombres
         if (nombres.contains(nombreEliminar))
             {
+                //Si se encuentra lo elimina
                 nombres.remove(nombreEliminar);
                 System.out.println("El nombre se eliminó correctamente");
             }
@@ -91,7 +98,7 @@ public class Taller
                 System.out.println("El nombre no se eliminó correctamente");
             }
         
-
+        //Imprime la lista con los cambios ya hechos
         imprimirNombres();
     }
 
@@ -100,6 +107,7 @@ public class Taller
      */
     public void imprimirTareas() 
     {
+        //Bucle que recorre e imprime las tareas en la lista de tareas
         for (String elem : tareas) 
         {
             System.out.println(elem);
@@ -113,10 +121,12 @@ public class Taller
      */
     public void agregarTarea (String tareaAgregar)
     {
-        boolean existe = false;
+        boolean existe = false; //Booleano inicializado en falso
         
+        //Bucle que recorre la lista tareas
         for (String elem : tareas)
         {
+            //Si la tarea existe en la lista, el booleano pasa a true
             if (elem.equalsIgnoreCase(tareaAgregar))
             {
                 existe = true;
@@ -125,6 +135,7 @@ public class Taller
         }
         if (!existe) 
         {
+            //Agrega la nueva tarea
             tareas.add(tareaAgregar);
         }
         imprimirTareas();
@@ -138,9 +149,10 @@ public class Taller
     public void eliminarTarea (String tareaEliminar)
     {
         
-        
+        //Verifica si la tarea ya existe en la lista
         if (tareas.contains(tareaEliminar))
             {
+                //Elimina la tarea de la lista de tareas
                 tareas.remove(tareaEliminar);
                 System.out.println("La tearea se eliminó correctamente");
             }
@@ -149,7 +161,7 @@ public class Taller
                 System.out.println("La tarea no se eliminó correctamente");
             }
         
-
+        //Imprime la lista de tareas con los nuevos cambios
         imprimirTareas();
     }
 
