@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) throws Exception 
     {
         try (Scanner scanner = new Scanner(System.in)) {
-            Taller taller = new Taller();
+            Clase1 taller = new Clase1();
             int opcion;
             
             do {

@@ -3,14 +3,14 @@ import java.util.List;
 
 
 
-public class Taller
+public class Clase1
 {
 
     List <String> nombres = new ArrayList<>(); //Lista que almacena los nombres
     List <String> tareas = new ArrayList<>();  //Lista que almacena las tareas
     
-    //Constructor de la clase Taller. Inicializa la lista de nombres con algunos nombres predeterminados.
-    public Taller()
+    //Constructor de la clase Clase1. Inicializa la lista de nombres con algunos nombres predeterminados.
+    public Clase1()
     {
         nombres.add("Kevin");
         nombres.add("Juan");
