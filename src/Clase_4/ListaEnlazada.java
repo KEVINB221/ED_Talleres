@@ -111,7 +111,7 @@ public class ListaEnlazada
         lista.eliminarNodo(3);
         lista.imprimirLista();
 
-        System.out.println("Se busca el número 3 y el 4:");
+        System.out.println("Se busca el valor 3 y el 4:");
         // Buscar un nodo
         System.out.println(lista.buscarNodo(3)); // Debe imprimir false
         System.out.println(lista.buscarNodo(4)); // Debe imprimir true
@@ -124,7 +124,7 @@ public class ListaEnlazada
         lista.insertarPosicion(7, 3); // Insertar en la posición intermedia
         lista.imprimirLista();
         System.out.println("Se inserta el número 8 al final:");
-        lista.insertarPosicion(8, 10); // Intentar insertar fuera del rango actual
+        lista.insertarPosicion(8, 6); // Intentar insertar fuera del rango actual
         lista.imprimirLista();
     }
 }
