@@ -98,27 +98,32 @@ public class ListaEnlazada
         ListaEnlazada lista = new ListaEnlazada();
         int[] elementos = {1, 2, 3, 4, 5};
 
+        System.out.println("Insertar elemento al inicio:");
         // Insertar elementos al inicio
         for (int elemento : elementos) {
             lista.insertarInicio(elemento);
         }
-
-        // Imprimir lista
+        System.out.println("Se imprime la lista:");
         lista.imprimirLista();
 
+        System.out.println("Se elimina el número 3:");
         // Eliminar un nodo
         lista.eliminarNodo(3);
         lista.imprimirLista();
 
+        System.out.println("Se busca el número 3 y el 4:");
         // Buscar un nodo
         System.out.println(lista.buscarNodo(3)); // Debe imprimir false
         System.out.println(lista.buscarNodo(4)); // Debe imprimir true
 
         // Insertar en posiciones específicas
+        System.out.println("Se inserta el número 6 al inicio:");
         lista.insertarPosicion(6, 0); // Insertar al inicio
         lista.imprimirLista();
+        System.out.println("Se inserta el número 7 en la posición 3:");
         lista.insertarPosicion(7, 3); // Insertar en la posición intermedia
         lista.imprimirLista();
+        System.out.println("Se inserta el número 8 al final:");
         lista.insertarPosicion(8, 10); // Intentar insertar fuera del rango actual
         lista.imprimirLista();
     }
