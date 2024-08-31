@@ -1,3 +1,4 @@
+package Clase_2;
 public class Clase2 
 {
     //* Analisis del resultado */
