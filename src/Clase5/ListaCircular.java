@@ -26,7 +26,7 @@ public class ListaCircular
             Node actual = cabeza;
             for (int i = 0; i < posicion - 1; i++) {
                 actual = actual.siguiente;
-                if (actual == cabeza) break; // Para manejar posiciones fuera de rango
+                if (actual == cabeza) break; 
             }
             nuevoNodo.siguiente = actual.siguiente;
             nuevoNodo.anterior = actual;
@@ -57,7 +57,7 @@ public class ListaCircular
         } while (actual != cabeza);
     }
 
-    // 3. Función para recorrer la lista circular tres veces
+    // 3. Función para recorrer la lista circular 
     public void recorrerTresVueltas() {
         if (cabeza == null) {
             System.out.println("La lista está vacía");
@@ -76,21 +76,21 @@ public class ListaCircular
         } while (vueltas < 3);
     }
 
-    // Método main para demostrar el funcionamiento
+    
     public static void main(String[] args) {
         ListaCircular lista = new ListaCircular();
 
-        // Insertar elementos
+        
         lista.insertar(1, 0);
         lista.insertar(2, 1);
         lista.insertar(3, 2);
         lista.insertar(4, 3);
-        lista.insertar(5, 4); // Insertar 5 en la segunda posición
+        lista.insertar(5, 4); 
 
         System.out.println("Lista original (3 vueltas):");
         lista.recorrerTresVueltas();
 
-        // Eliminar un elemento
+       
         lista.eliminar(3);
 
         System.out.println("\nLista después de eliminar el 3 (3 vueltas):");
