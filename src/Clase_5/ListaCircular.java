@@ -1,4 +1,4 @@
-package Clase5;
+package Clase_5;
 
 public class ListaCircular 
 {
