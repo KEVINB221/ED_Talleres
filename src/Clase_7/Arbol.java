@@ -1,69 +1,86 @@
 package Clase_7;
 
-class Node{
-
-    char letra;
-    Node izquierdo;
-    Node derecho;
-    
-    public Node(char letra){
-        this.letra = letra;
-        this.derecho = null;
-        this.izquierdo = null;
+class Nodo {
+    char valor;
+    Nodo derecha;
+    Nodo izquierda;
+    public Nodo(char valor) {
+        this.valor = valor;
+        this.derecha = null;
+        this.izquierda = null;
     }
 }
 
-class ArbolBinario{
-    Node raiz;
+class ArbolBinario {
+    Nodo raiz;
 
-    public ArbolBinario(){
+    public ArbolBinario() {
         this.raiz = null;
     }
 
-    public void inorden(Node nodo){
-        if (nodo == null) {
-            return;
-        }
-        inorden(nodo.izquierdo);
-        System.out.print(nodo.letra + " ");
-        inorden(nodo.derecho);
+    public void construirArbolEspecifico() {
+        this.raiz = new Nodo('A');
+        this.raiz.izquierda = new Nodo('B');
+        this.raiz.derecha = new Nodo('C');
+        this.raiz.izquierda.izquierda = new Nodo('D');
+        this.raiz.izquierda.derecha = new Nodo('E');
+        this.raiz.derecha.derecha = new Nodo('F');
     }
 
-    public void preorden(Node nodo){
-        if (nodo == null) {
-            return;
-        }
-        System.out.print(nodo.letra + " ");
-        preorden(nodo.izquierdo);
-
-        preorden(nodo.derecho);
+    
+    public void inorden() {
+        inordenRecursivo(this.raiz);
+        System.out.println();
     }
 
-    public void postorden(Node nodo){
-        if (nodo == null) {
-            return;
+    private void inordenRecursivo(Nodo nodo) {
+        if (nodo != null) {
+            inordenRecursivo(nodo.izquierda);
+            System.out.print(nodo.valor + " ");
+            inordenRecursivo(nodo.derecha);
         }
-        postorden(nodo.izquierdo);
-        postorden(nodo.derecho);
-        System.out.print(nodo.letra + " ");
     }
 
+    public void postorden() {
+        postordenRecursivo(this.raiz);
+        System.out.println();
+    }
+
+    private void postordenRecursivo(Nodo nodo) {
+        if (nodo != null) {
+            postordenRecursivo(nodo.izquierda);
+            postordenRecursivo(nodo.derecha);
+            System.out.print(nodo.valor + " ");
+        }
+    }
+
+    public void preorden() {
+        preordenRecursivo(this.raiz);
+        System.out.println();
+    }
+
+    private void preordenRecursivo(Nodo nodo) {
+        if (nodo != null) {
+            System.out.print(nodo.valor + " ");
+            preordenRecursivo(nodo.izquierda);
+            preordenRecursivo(nodo.derecha);
+        }
+    }
+
+    // Método main para demostrar la construcción y recorrido del árbol
     public static void main(String[] args) {
         ArbolBinario arbol = new ArbolBinario();
-        arbol.raiz = new Node('A');
-        arbol.raiz.izquierdo = new Node('B');
-        arbol.raiz.derecho = new Node('C');
-        arbol.raiz.izquierdo.izquierdo = new Node('D');
-        arbol.raiz.izquierdo.derecho = new Node('E');
-        arbol.raiz.derecho.derecho = new Node('F');
-        System.out.println("Recorrido Inorden:");
-        arbol.inorden(arbol.raiz); 
-
-        System.out.println("\nRecorrido Preorden:");
-        arbol.preorden(arbol.raiz); 
-
-        System.out.println("\nRecorrido Postorden:");
-        arbol.postorden(arbol.raiz); 
+        
+        System.out.println("Construyendo el árbol específico...");
+        arbol.construirArbolEspecifico();
+        
+        System.out.println("Recorrido en inorden:");
+        arbol.inorden();
+        
+        System.out.println("Recorrido en postorden:");
+        arbol.postorden();
+        
+        System.out.println("Recorrido en preorden:");
+        arbol.preorden();
     }
-
 }
